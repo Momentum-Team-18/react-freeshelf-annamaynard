@@ -1,41 +1,50 @@
 import "./App.css";
 import bookData from "./book-data.json";
-import { useState } from 'react'
+import { useState } from "react";
 
 function App() {
-     
   return (
     <div>
       <h1>Freeshelf</h1>
       <ul>
-        {bookData.map((book) => <BookInfo name={book} />)}
+        {bookData.map((book) => (
+          <BookInfo book={book}
+          />
+          ))}
       </ul>
     </div>
   );
 }
 
-
 function BookInfo(props) {
-    const [expanded, setExpanded] = useState(false)
-
+    const [expanded, setExpanded] = useState(false);
+    
     return (
-        <div className="bookCard">
-            <h1>{props.title}</h1>
-            <h2>{props.author}</h2>
-            <p>{props.shortDescription}</p>
-            <p><img src={props.coverImageUrl} alt="bookimage" /></p>
-            <button onClick={() => setExpanded(!expanded)}> {expanded ? "Show Less" : "Show More"}</button>
-            {expanded && (
-                <div>
-                    <p>{props.url}</p>
-                    <p>{props.puhlisher}</p>
-                    <p>{props.detailedDescription}</p>
-                </div>
-            )}
-
-        </div>
-    )
+        <div className="container">
+      <div className="bookCard">
+        <h2>{props.book.title}</h2>
+        <h3>{props.book.author}</h3>
+        <p>{props.book.shortDescription}</p>
+        <p>
+          <img className="image" src={props.book.coverImageUrl} alt="bookimage" />
+        </p>
+        <button onClick={() => setExpanded(!expanded)}>
+          {" "}
+          {expanded ? "Show Less" : "Show More"}
+        </button>
+        {expanded && (
+            <div>
+            <p>{props.book.url}</p>
+            <p>{props.book.publisher}</p>
+            <p>{props.book.detailedDescription}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
+
+export default App;
 
 // The page should display a list of books with a thumbnail display of information for each book, including:
 
@@ -51,6 +60,12 @@ function BookInfo(props) {
 // + publication date
 // + expanded description
 
-export default App;
-
 //  {/* Use bookData to show books on the page*/}
+
+// title={book.title}
+// author={book.author}
+// description={book.shortDescription}
+// image={book.coverImageUrl}
+// url={book.url}
+// publisher={book.publisher}
+// detailed={book.detailedDescription}

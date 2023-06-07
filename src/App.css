@@ -1,1 +1,24 @@
+body{
+    border: solid black 2px;
+}
 
+.container {
+    border: 2px;
+    padding: 10px;
+}
+
+.bookCard{
+    border: solid black 2px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.image{
+    width:100px;
+    height:100px;
+}
+
+h1{
+   text-align: center;
+}
