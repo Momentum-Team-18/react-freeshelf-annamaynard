@@ -22,11 +22,11 @@ function BookInfo(props) {
     return (
         <div className="container">
       <div className="bookCard">
-        <h2>{props.book.title}</h2>
+        <h2><a href={props.book.url}>{props.book.title}</a></h2>
         <h3>{props.book.author}</h3>
-        <p>{props.book.shortDescription}</p>
         <p>
           <img className="image" src={props.book.coverImageUrl} alt="bookimage" />
+        <p>{props.book.shortDescription}</p>
         </p>
         <button onClick={() => setExpanded(!expanded)}>
           {" "}
@@ -34,7 +34,6 @@ function BookInfo(props) {
         </button>
         {expanded && (
             <div>
-            <p>{props.book.url}</p>
             <p>{props.book.publisher}</p>
             <p>{props.book.detailedDescription}</p>
           </div>

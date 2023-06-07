@@ -16,9 +16,19 @@ body{
 
 .image{
     width:100px;
-    height:100px;
+    height:auto;
 }
 
 h1{
    text-align: center;
+   text-decoration: underline;
+   text-size: 70px;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+a{
+    color:black;
 }
