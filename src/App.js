@@ -23,7 +23,7 @@ function BookInfo(props) {
         <div className="container">
       <div className="bookCard">
         <h2><a href={props.book.url}>{props.book.title}</a></h2>
-        <h3>{props.book.author}</h3>
+        <h3>Author: {props.book.author}</h3>
         <p>
           <img className="image" src={props.book.coverImageUrl} alt="bookimage" />
         <p>{props.book.shortDescription}</p>
@@ -34,8 +34,9 @@ function BookInfo(props) {
         </button>
         {expanded && (
             <div>
-            <p>{props.book.publisher}</p>
             <p>{props.book.detailedDescription}</p>
+            <p>Published by: {props.book.publisher}</p>
+            <p>Publication Date: {props.book.publicationDate}</p>
           </div>
         )}
       </div>
