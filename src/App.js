@@ -8,32 +8,37 @@ function App() {
       <h1>Freeshelf</h1>
       <ul>
         {bookData.map((book) => (
-          <BookInfo book={book}
-          />
-          ))}
+          <BookInfo book={book} />
+        ))}
       </ul>
     </div>
   );
 }
 
 function BookInfo(props) {
-    const [expanded, setExpanded] = useState(false);
-    
-    return (
-        <div className="container">
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="container">
       <div className="bookCard">
-        <h2><a href={props.book.url}>{props.book.title}</a></h2>
+        <h2>
+          <a href={props.book.url}>{props.book.title}</a>
+        </h2>
         <h3>Author: {props.book.author}</h3>
         <p>
-          <img className="image" src={props.book.coverImageUrl} alt="bookimage" />
-        <p>{props.book.shortDescription}</p>
+          <img
+            className="image"
+            src={props.book.coverImageUrl}
+            alt="bookimage"
+          />
+          <p>{props.book.shortDescription}</p>
         </p>
         <button onClick={() => setExpanded(!expanded)}>
           {" "}
           {expanded ? "Show Less" : "Show More"}
         </button>
         {expanded && (
-            <div>
+          <div>
             <p>{props.book.detailedDescription}</p>
             <p>Published by: {props.book.publisher}</p>
             <p>Publication Date: {props.book.publicationDate}</p>
@@ -45,27 +50,3 @@ function BookInfo(props) {
 }
 
 export default App;
-
-// The page should display a list of books with a thumbnail display of information for each book, including:
-
-// + title
-// + author
-// + short description
-// + image of the book's cover
-
-// The additional information shown in the expanded view should include:
-
-// + URL
-// + publisher
-// + publication date
-// + expanded description
-
-//  {/* Use bookData to show books on the page*/}
-
-// title={book.title}
-// author={book.author}
-// description={book.shortDescription}
-// image={book.coverImageUrl}
-// url={book.url}
-// publisher={book.publisher}
-// detailed={book.detailedDescription}
