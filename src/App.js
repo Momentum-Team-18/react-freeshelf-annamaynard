@@ -21,29 +21,33 @@ function BookInfo(props) {
   return (
     <div className="container">
       <div className="bookCard">
-        <h2>
-          <a href={props.book.url}>{props.book.title}</a>
-        </h2>
-        <h3>Author: {props.book.author}</h3>
-        <p>
-          <img
-            className="image"
-            src={props.book.coverImageUrl}
-            alt="bookimage"
-          />
+        <div className="bookCardLeft">
+          <h2>
+            <a href={props.book.url}>{props.book.title}</a>
+          </h2>
+          <h3>Author: {props.book.author}</h3>
           <p>{props.book.shortDescription}</p>
-        </p>
-        <button onClick={() => setExpanded(!expanded)}>
-          {" "}
-          {expanded ? "Show Less" : "Show More"}
-        </button>
-        {expanded && (
-          <div>
-            <p>{props.book.detailedDescription}</p>
-            <p>Published by: {props.book.publisher}</p>
-            <p>Publication Date: {props.book.publicationDate}</p>
-          </div>
-        )}
+              <button onClick={() => setExpanded(!expanded)}>
+                {" "}
+                {expanded ? "Show Less" : "Show More"}
+              </button>
+              {expanded && (
+                <div>
+                  <p>{props.book.detailedDescription}</p>
+                  <p>Published by: {props.book.publisher}</p>
+                  <p>Publication Date: {props.book.publicationDate}</p>
+                </div>
+              )}
+        </div>
+        <div clasName="bookCardRight">
+          <p>
+            <img
+              className="image"
+              src={props.book.coverImageUrl}
+              alt="bookimage"
+            />
+          </p>
+        </div>
       </div>
     </div>
   );
