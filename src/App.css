@@ -5,6 +5,7 @@ body{
 .container {
     border: 2px;
     padding: 10px;
+    
 }
 
 .bookCard{
@@ -14,12 +15,18 @@ body{
     display:flex;
 }
 
-.bookcardLeft{
-    
-
+.bookCardLeft{
+    justify-content: flex-start;
+    flex: 1;
 }
+
+/* .bookCardRight{
+    justify-content: flex-end;
+    border-color: pink;
+}  */
+
 .image{
-    width:100px;
+    width:140px;
     height:auto;
     padding-left: 4px;
 }

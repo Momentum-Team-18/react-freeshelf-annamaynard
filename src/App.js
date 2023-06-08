@@ -39,7 +39,7 @@ function BookInfo(props) {
                 </div>
               )}
         </div>
-        <div clasName="bookCardRight">
+        <div>
           <p>
             <img
               className="image"
